@@ -4,11 +4,13 @@ import axios from 'axios'
 import './home.css';
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
+// const {RadialBarChart, RadialBar, Legend} = Recharts;
 import LogoDHL from '../pic/content.png';
 import LogoFedEx from '../pic/design.png';
 import LogoKerry from '../pic/marketing.png';
 import LogoSendIt from '../pic/programming.png';
+import ywc from '../pic/logo.png';
 
 
 
@@ -34,7 +36,16 @@ const MyMapComponent = compose(
     </GoogleMap>
   )
 
-// const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
+
+
+const data = [
+    {name: 'Content', คนติด: 56, คนสมัคร: 227, amt: 2400},
+    {name: 'Design', คนติด: 51, คนสมัคร: 219, amt: 2210},
+    {name: 'Marketing', คนติด: 50, คนสมัคร: 308, amt: 2290},
+    {name: 'Programming', คนติด: 63, คนสมัคร: 357, amt: 2000},
+
+];
 
 class Home extends React.PureComponent {
     state = {
@@ -243,11 +254,33 @@ class Home extends React.PureComponent {
 
 
 <center>
-                <h1>   SEMI_FINAL ROUND
+   
+   
+
+  <div className="jumbotron">
+
+  <img id="imgywc" src={ywc}/>
+
+  <h1>   SEMI_FINAL ROUND
   </h1>
 
-  <h1>ประกาศผู้มีสิทธิ์เข้าสัมภาษณ์ </h1>
+  <h3>ประกาศผู้มีสิทธิ์เข้าสัมภาษณ์ </h3>
 
+  <br/>
+
+  <div className="panel panel-default" id = "fact-panel">
+  <div className="panel-body">
+
+  <h5>การสัมภาษณ์จะจัดขึ้นในวันที่ 26 พฤศจิกายน 2560 ณ อาคาร ซี.พี.ทาวเวอร์ 1 (สีลม) </h5>
+  <h5>ซึ่งจะแบ่งออกเป็น 2 รอบ คือ รอบช่วงเช้าตั้งแต่เวลา 9.00 น. ถึง 12.00 น. และ รอบช่วงบ่ายตั้งแต่เวลา 13.00 น. ถึง 18.00 น.</h5>
+    
+  </div>
+</div>
+
+  
+  
+  
+</div>
   </center>
 
 
@@ -257,15 +290,16 @@ class Home extends React.PureComponent {
                 </div>
 
 
-                <div className="col-md-8" >
+                <div className="col-md-8" id="whole-center-column" >
                     
                     <div className="form-group" >
+                    <center>
                         <input type="text" className="form-control" id="seachName-Field" placeholder="Enter Your Name Here" value={this.state.findName.searchName} name="fullName" onChange={this.handleChange} />
-                        
+                        </center>
                     </div>
 
                     <center>
-                    <button type="submit" className="btn btn-default" id="name-search-button" onClick={this.checkSearch} >Search</button>
+                    <button type="submit" className="btn btn-primary" id="name-search-button" onClick={this.checkSearch} >Search</button>
                     </center>
 
                     <div id="Body-logistic">
@@ -364,9 +398,9 @@ class Home extends React.PureComponent {
                         </div> */}
 
 
-<div className="panel panel-default">
+<div className="panel panel-primary">
 <div className="panel-heading">
-  <h3 className="panel-title">สิ่งที่ต้องเตรียมมาในวันสัมภาษณ์</h3>
+  <h1 className="panel-title">สิ่งที่ต้องเตรียมมาในวันสัมภาษณ์</h1>
 </div>
 <div className="panel-body">
 1. บัตรประชาชนสำหรับการแลกบัตรเข้าอาคาร ซี.พี.ทาวเวอร์ 1 (สีลม) และ บัตรนักศึกษาสำหรับการลงทะเบียนสัมภาษณ์ กรุณาแต่งกายด้วยชุดนักศึกษา<br/>
@@ -399,9 +433,100 @@ class Home extends React.PureComponent {
 <p>หมายเหตุ: สำหรับน้อง ๆ ที่ไม่สะดวกเดินทางมาสัมภาษณ์ที่อาคาร CP Tower สีลม ให้ Inbox มาทางเพจเฟสบุ๊ค Young Webmaster Camp ภายในวันที่ 20 พฤศจิกายน 2560</p>
 </div>
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 </div>
 
-       
+
+<div className="page-header">
+  <h1>Timeline </h1>
+</div>
+
+                {/* start timeline */}
+                
+                <div className="row bs-wizard" >
+                
+
+                  <div className="col-xs-3 bs-wizard-step complete">
+                    <div className="text-center bs-wizard-stepnum">ประกาศผล</div>
+                    <div className="progress"><div className="progress-bar"></div></div>
+                    <a href="#" className="bs-wizard-dot"></a>
+                    <div className="bs-wizard-info text-center">17 พฤศจิกายน</div>
+                  </div>
+
+
+                  <div className="col-xs-3 bs-wizard-step active">
+                    <div className="text-center bs-wizard-stepnum">สัมภาษณ์</div>
+                    <div className="progress"><div className="progress-bar"></div></div>
+                    <a href="#" className="bs-wizard-dot"></a>
+                    <div className="bs-wizard-info text-center">26 พฤศจิกายน</div>
+                  </div>
+
+                  <div className="col-xs-3 bs-wizard-step disabled">
+                    <div className="text-center bs-wizard-stepnum">ประกาศผลสัมภาษณ์</div>
+                    <div className="progress"><div className="progress-bar"></div></div>
+                    <a href="#" className="bs-wizard-dot"></a>
+                    <div className="bs-wizard-info text-center"> 3 ธันวาคม</div>
+                  </div>
+
+                  <div className="col-xs-3 bs-wizard-step disabled">
+                    <div className="text-center bs-wizard-stepnum">วันค่าย</div>
+                    <div className="progress"><div className="progress-bar"></div></div>
+                    <a href="#" className="bs-wizard-dot"></a>
+                    <div className="bs-wizard-info text-center"> 4 - 7 มกราคม </div>
+                  </div>
+
+                 
+                 
+                
+              </div>
+              
+
+                {/* end timeline */}
+
+                <div className="col-md-6" id="chart">
+
+                <center>
+            	<BarChart width={470} height={300} data={data}
+                margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+           <XAxis dataKey="name"/>
+           <YAxis/>
+           <CartesianGrid strokeDasharray="3 3"/>
+           <Tooltip/>
+           <Legend />
+           <Bar dataKey="คนสมัคร" fill="#8884d8" minPointSize={5}/>
+           <Bar dataKey="คนติด" fill="#82ca9d" minPointSize={10}/>
+          </BarChart>
+                        </center>
+                
+                </div>
+
+                <div className="col-md-6" id="tellno">
+
+                
+                <center>
+
+                <div className="alert alert-info" role="alert">
+                <h3>
+                สอบถามเพิ่มเติมติดต่อ</h3><br/>
+                <p>
+พี่เบ๊บ: 064-174-7080<br/>
+<br/>
+พี่ฟง: 092-458-7067<br/><br/>
+พี่เบนซ์: 085-666-7571<br/><br/>
+</p>
+                </div>
+                    </center>
+                </div>
+
 
      
 
@@ -413,9 +538,17 @@ class Home extends React.PureComponent {
                 </div>
 
                 <div className="col-md-2" >
-
+                
                 </div>
 
+              
+               
+
+       
+
+               
+      
+     
 
 
             </div>

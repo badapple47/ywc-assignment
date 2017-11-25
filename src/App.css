@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  /* background-image: url(/pic/binary.jpg); */
 }
 
 .App-logo {
@@ -29,4 +30,5 @@
 
 .wholeapp{
   /* text-align: center; */
+  /* background-image: url(pic/binary.jpg); */
 }
