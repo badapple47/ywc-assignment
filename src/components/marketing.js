@@ -9,7 +9,7 @@ import LogoDHL from '../pic/content.png';
 import LogoFedEx from '../pic/design.png';
 import LogoKerry from '../pic/marketing.png';
 import LogoSendIt from '../pic/programming.png';
-
+import ywc from '../pic/logo.png';
 
 
 // https://ywc15.ywc.in.th/api/interview
@@ -199,26 +199,49 @@ class marketing extends React.PureComponent {
             <div className="home" >
 
 
-            <center>
-                <h1>   SEMI_FINAL ROUND
-  </h1>
-
-  <h1>ประกาศผู้มีสิทธิ์เข้าสัมภาษณ์ </h1>
-  </center>
+<center>
 
 
 
-                <div className="col-md-3" >
+<div className="jumbotron">
+
+<img id="imgywc" src={ywc}/>
+
+<h1>   SEMI_FINAL ROUND
+</h1>
+
+<h3>ประกาศผู้มีสิทธิ์เข้าสัมภาษณ์ </h3>
+
+<br/>
+
+<div className="panel panel-default" id = "fact-panel">
+<div className="panel-body">
+
+<h5>การสัมภาษณ์จะจัดขึ้นในวันที่ 26 พฤศจิกายน 2560 ณ อาคาร ซี.พี.ทาวเวอร์ 1 (สีลม) </h5>
+<h5>ซึ่งจะแบ่งออกเป็น 2 รอบ คือ รอบช่วงเช้าตั้งแต่เวลา 9.00 น. ถึง 12.00 น. และ รอบช่วงบ่ายตั้งแต่เวลา 13.00 น. ถึง 18.00 น.</h5>
+ 
+</div>
+</div>
+
+
+
+
+</div>
+</center>
+
+
+
+                <div className="col-md-2" >
                 
 
                 </div>
 
 
-                <div className="col-md-6" >
+                <div className="col-md-8" >
 
                 <div className="panel panel-default">
   <div className="panel-heading">
-    <h3 className="panel-title">การบ้านสาขามาร์เก็ตติ้ง</h3>
+    <h3 className="panel-title"><big id="bigTag">การบ้านสาขามาร์เก็ตติ้ง</big></h3>
   </div>
   <div className="panel-body">
   ให้ทำแผนการตลาด (Marketing Plan) สำหรับเว็บไซต์หนึ่งเว็บไซต์ โดยเลือกเว็บไซต์ใด ๆ ก็ได้ ทั้งเว็บไซต์ของไทยและเว็บไซต์ของต่างประเทศ<br/>
@@ -226,9 +249,10 @@ class marketing extends React.PureComponent {
   </div>
 </div>
 
-           
+<div className="alert alert-warning" role="alert">   
 <p>MK1 - MK18 สัมภาษณ์ช่วงเช้าตั้งแต่เวลา 9.00 น. ถึง 12.00 น. </p>
            <p>MK19 - MK50 สัมภาษณ์ช่วงบ่ายตั้งแต่เวลา 13.00 น. ถึง 18.00 น. </p>
+           </div>
 
 
                     <div id="wholetable">
@@ -294,7 +318,7 @@ class marketing extends React.PureComponent {
 
                 </div>
 
-                <div className="col-md-3" >
+                <div className="col-md-2" >
 
                 </div>
 

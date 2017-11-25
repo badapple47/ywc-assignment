@@ -301,7 +301,7 @@ class Home extends React.PureComponent {
                     </div>
 
                     <center>
-                    <button type="submit" className="btn btn-primary" id="name-search-button" onClick={this.checkSearch} >ค้นหาผลการสมัคร</button>
+                    <button type="submit" className="btn btn-primary" id="name-search-button" onClick={this.checkSearch} >ตรวจสอบสิทธิ์สัมภาษณ์</button>
                     </center>
 
                     <div id="Body-Major">
@@ -309,7 +309,8 @@ class Home extends React.PureComponent {
                 									    <div className="row" id="Body-logistic-logo">
                 									 
 										  <div className="col-md-3">
-										    <a href="/content" className="thumbnail">
+                                   
+										    <a target="_blank" href="/content" className="thumbnail">
 										      <img id="img-circle" src={LogoDHL}/>
                                               <center><p>Content</p></center>
                                            
@@ -317,21 +318,21 @@ class Home extends React.PureComponent {
 										      </div>
 
 										      <div className="col-md-3">
-										    <a href="/design" className="thumbnail">
+										    <a target="_blank" href="/design" className="thumbnail">
 										      <img id="img-circle" src={LogoFedEx}/>
                                               <center><p>Design</p></center>
 										      </a>
 										      </div>
 
 										      <div className="col-md-3">
-										    <a href="/marketing" className="thumbnail">
+										    <a target="_blank" href="/marketing" className="thumbnail">
 										      <img id="img-circle" src={LogoKerry}/>
                                               <center><p>Marketing</p></center>
 										      </a>
 										      </div>
 
 										      <div className="col-md-3">
-										    <a href="/programming" className="thumbnail">
+										    <a target="_blank" href="/programming" className="thumbnail">
 										      <img id="img-circle" src={LogoSendIt}/>
                                               <center><p>Programming</p></center>
 										      </a>
@@ -349,60 +350,7 @@ class Home extends React.PureComponent {
 										</div>
 
 
-                    {/* <div id="wholetable">
 
-                            
-
-                            <div className="method">
-                                <div className="row margin-0 list-header hidden-sm hidden-xs">
-                                    <div className="col-md-4"><div className="header" id="header-prepare">Interview Ref</div></div>
-                                    <div className="col-md-4"><div className="header" id="header-prepare">Name</div></div>
-                                    <div className="col-md-4"><div className="header" id="header-prepare">Major</div></div>
-                                   
-                                </div>
-                            </div>
-
-
-                          
-
-
-                              {this.state.programming.map((each) =>(  
-                            <div className="method">
-                                <div className="row margin-0">
-                               
-
-                                    <div className="col-md-4">
-                                        <div className="cell">
-                                            <div className="prepare-trackingcode">
-                                            {each.interviewRef}
-                                      </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-4">
-                                        <div className="cell">
-                                            <div className="prepare-Recipient">
-                                                {each.firstName +" "+ each.lastName}
-                                      </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-4">
-                                        <div className="cell">
-                                            <div className="prepare-address">
-                                                {each.major}
-                                      </div>
-                                        </div>
-                                    </div>
-                         
-
-                                </div>
-
-
-                            </div>
-                          ))}  
-
-                        </div> */}
 
 
 <div className="panel panel-primary">
@@ -410,9 +358,10 @@ class Home extends React.PureComponent {
   <h1 className="panel-title">สิ่งที่ต้องเตรียมมาในวันสัมภาษณ์</h1>
 </div>
 <div className="panel-body">
-1. บัตรประชาชนสำหรับการแลกบัตรเข้าอาคาร ซี.พี.ทาวเวอร์ 1 (สีลม) และ บัตรนักศึกษาสำหรับการลงทะเบียนสัมภาษณ์ กรุณาแต่งกายด้วยชุดนักศึกษา<br/>
-2. การบ้านและสิ่งที่กรรมการสาขากำหนดไว้ กรุณาอ่านรายละเอียดการบ้านและสิ่งที่กรรมการให้เตรียมมาให้ครบถ้วน หากสาขาใดต้องใช้โน้ตบุ๊ค ควรชาร์ตแบตเตอรี่และเตรียมอินเทอร์เน็ตส่วนตัวมาให้พร้อม เนื่องจากสถานที่ไม่มีบริการอินเทอร์เน็ตให้ใช้<br/>
-3. Portfolio สามารถนำมาประกอบการสัมภาษณ์ได้ สำหรับน้อง ๆ สาขาดีไซน์จะต้องนำ Portfolio มาด้วยทุกคน
+1. <big id="bigTag">บัตรประชาชน</big> สำหรับการแลกบัตรเข้าอาคาร ซี.พี.ทาวเวอร์ 1 (สีลม) และ <big id="bigTag">บัตรนักศึกษา</big>สำหรับการลงทะเบียนสัมภาษณ์ กรุณาแต่งกายด้วยชุดนักศึกษา<br/>
+2. <big id="bigTag">การบ้านและสิ่งที่กรรมการสาขากำหนดไว้ </big> กรุณาอ่านรายละเอียดการบ้านและสิ่งที่กรรมการให้เตรียมมาให้ครบถ้วน หากสาขาใดต้องใช้โน้ตบุ๊ค ควรชาร์ตแบตเตอรี่และเตรียมอินเทอร์เน็ตส่วนตัวมาให้พร้อม เนื่องจากสถานที่ไม่มีบริการอินเทอร์เน็ตให้ใช้<br/>
+3. <big id="bigTag">Portfolio </big> สามารถนำมาประกอบการสัมภาษณ์ได้ สำหรับน้อง ๆ สาขาดีไซน์จะต้องนำ Portfolio มาด้วยทุกคน
+
 </div>
 </div>
 
@@ -432,9 +381,9 @@ class Home extends React.PureComponent {
 </div>
 
 <div className="col-md-4" >
-<p> 1. ด้วยรถไฟฟ้า BTS สามารถลงสถานีศาลาแดง ณ ทางออกที่ 2 <br/><br/>
-2. ด้วยรถไฟฟ้า MRT สามารถลงสถานีสีลม ณ ทางออกที่ 2 โดยเดินเรียบทางเท้าไปตามถนนสีลม<br/><br/>
-3. ด้วยรถประจำทาง สามารถขึ้นใช้บริการสาย 15, 77, 155, 504, 177, 76 </p><br/><br/>
+<p> 1. <big id="bigTag"> ด้วยรถไฟฟ้า BTS </big>สามารถลงสถานีศาลาแดง ณ ทางออกที่ 2 <br/><br/>
+2. <big id="bigTag"> ด้วยรถไฟฟ้า MRT BTS </big> สามารถลงสถานีสีลม ณ ทางออกที่ 2 โดยเดินเรียบทางเท้าไปตามถนนสีลม<br/><br/>
+3. <big id="bigTag"> ด้วยรถประจำทาง BTS </big> สามารถขึ้นใช้บริการสาย 15, 77, 155, 504, 177, 76 </p><br/><br/>
 
 <div className="alert alert-warning" role="alert">
 <p>หมายเหตุ: สำหรับน้อง ๆ ที่ไม่สะดวกเดินทางมาสัมภาษณ์ที่อาคาร CP Tower สีลม ให้ Inbox มาทางเพจเฟสบุ๊ค Young Webmaster Camp ภายในวันที่ 20 พฤศจิกายน 2560</p>
@@ -445,7 +394,7 @@ class Home extends React.PureComponent {
 <br/>
 <br/>
 
-<br/>
+
 
 
 </div>
