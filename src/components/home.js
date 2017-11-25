@@ -29,7 +29,7 @@ const MyMapComponent = compose(
     withGoogleMap
   )((props) =>
     <GoogleMap
-      defaultZoom={13}
+      defaultZoom={14}
       defaultCenter={{ lat: 13.727505, lng: 100.532688}}
     >
       {props.isMarkerShown && <Marker position={{ lat: 13.727505, lng: 100.532688 }} onClick={props.onMarkerClick} />}
@@ -40,10 +40,10 @@ const MyMapComponent = compose(
 
 
 const data = [
-    {name: 'Content', คนติด: 56, คนสมัคร: 227, amt: 2400},
-    {name: 'Design', คนติด: 51, คนสมัคร: 219, amt: 2210},
-    {name: 'Marketing', คนติด: 50, คนสมัคร: 308, amt: 2290},
-    {name: 'Programming', คนติด: 63, คนสมัคร: 357, amt: 2000},
+    {name: 'Content', ผู้มีสิทธิ์เข้าสัมภาษณ์: 56, จำนวนคนสมัคร: 227, amt: 2400},
+    {name: 'Design', ผู้มีสิทธิ์เข้าสัมภาษณ์: 51, จำนวนคนสมัคร: 219, amt: 2210},
+    {name: 'Marketing', ผู้มีสิทธิ์เข้าสัมภาษณ์: 50, จำนวนคนสมัคร: 308, amt: 2290},
+    {name: 'Programming', ผู้มีสิทธิ์เข้าสัมภาษณ์: 63, จำนวนคนสมัคร: 357, amt: 2000},
 
 ];
 
@@ -218,9 +218,11 @@ class Home extends React.PureComponent {
 
 
             if(this.state.data[i].firstName == this.state.findName.name && this.state.data[i].lastName == this.state.findName.sirName ) {
+
+
                 
                 
-                alert(this.state.data[i].major);
+                alert("ขอแสดงความยินดี คุณมีสิทธิ์เข้าสัมภาษณ์ในสาย" + " " +this.state.data[i].major + " รหัส" + " " +this.state.data[i].interviewRef );
                 return 0
 
             }
@@ -294,39 +296,44 @@ class Home extends React.PureComponent {
                     
                     <div className="form-group" >
                     <center>
-                        <input type="text" className="form-control" id="seachName-Field" placeholder="Enter Your Name Here" value={this.state.findName.searchName} name="fullName" onChange={this.handleChange} />
+                        <input type="text" className="form-control" id="seachName-Field" placeholder="ชื่อ นามสกุล" value={this.state.findName.searchName} name="fullName" onChange={this.handleChange} />
                         </center>
                     </div>
 
                     <center>
-                    <button type="submit" className="btn btn-primary" id="name-search-button" onClick={this.checkSearch} >Search</button>
+                    <button type="submit" className="btn btn-primary" id="name-search-button" onClick={this.checkSearch} >ค้นหาผลการสมัคร</button>
                     </center>
 
-                    <div id="Body-logistic">
-										<h3> Major </h3>
+                    <div id="Body-Major">
+										<center><h3> ผลแยกตามสาขา </h3></center>
                 									    <div className="row" id="Body-logistic-logo">
                 									 
 										  <div className="col-md-3">
 										    <a href="/content" className="thumbnail">
 										      <img id="img-circle" src={LogoDHL}/>
+                                              <center><p>Content</p></center>
+                                           
 										      </a>
 										      </div>
 
 										      <div className="col-md-3">
 										    <a href="/design" className="thumbnail">
 										      <img id="img-circle" src={LogoFedEx}/>
+                                              <center><p>Design</p></center>
 										      </a>
 										      </div>
 
 										      <div className="col-md-3">
 										    <a href="/marketing" className="thumbnail">
 										      <img id="img-circle" src={LogoKerry}/>
+                                              <center><p>Marketing</p></center>
 										      </a>
 										      </div>
 
 										      <div className="col-md-3">
 										    <a href="/programming" className="thumbnail">
 										      <img id="img-circle" src={LogoSendIt}/>
+                                              <center><p>Programming</p></center>
 										      </a>
 										      </div>
 
@@ -425,9 +432,9 @@ class Home extends React.PureComponent {
 </div>
 
 <div className="col-md-4" >
-<p> 1. ด้วยรถไฟฟ้า BTS สามารถลงสถานีศาลาแดง ณ ทางออกที่ 2 <br/>
-2. ด้วยรถไฟฟ้า MRT สามารถลงสถานีสีลม ณ ทางออกที่ 2 โดยเดินเรียบทางเท้าไปตามถนนสีลม<br/>
-3. ด้วยรถประจำทาง สามารถขึ้นใช้บริการสาย 15, 77, 155, 504, 177, 76 </p>
+<p> 1. ด้วยรถไฟฟ้า BTS สามารถลงสถานีศาลาแดง ณ ทางออกที่ 2 <br/><br/>
+2. ด้วยรถไฟฟ้า MRT สามารถลงสถานีสีลม ณ ทางออกที่ 2 โดยเดินเรียบทางเท้าไปตามถนนสีลม<br/><br/>
+3. ด้วยรถประจำทาง สามารถขึ้นใช้บริการสาย 15, 77, 155, 504, 177, 76 </p><br/><br/>
 
 <div className="alert alert-warning" role="alert">
 <p>หมายเหตุ: สำหรับน้อง ๆ ที่ไม่สะดวกเดินทางมาสัมภาษณ์ที่อาคาร CP Tower สีลม ให้ Inbox มาทางเพจเฟสบุ๊ค Young Webmaster Camp ภายในวันที่ 20 พฤศจิกายน 2560</p>
@@ -437,16 +444,14 @@ class Home extends React.PureComponent {
 <br/>
 <br/>
 <br/>
+
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
+
 
 </div>
 
 
-<div className="page-header">
+<div className="page-header" id="timeline">
   <h1>Timeline </h1>
 </div>
 
@@ -502,8 +507,8 @@ class Home extends React.PureComponent {
            <CartesianGrid strokeDasharray="3 3"/>
            <Tooltip/>
            <Legend />
-           <Bar dataKey="คนสมัคร" fill="#8884d8" minPointSize={5}/>
-           <Bar dataKey="คนติด" fill="#82ca9d" minPointSize={10}/>
+           <Bar dataKey="จำนวนคนสมัคร" fill="#8884d8" minPointSize={5}/>
+           <Bar dataKey="ผู้มีสิทธิ์เข้าสัมภาษณ์" fill="#82ca9d" minPointSize={10}/>
           </BarChart>
                         </center>
                 

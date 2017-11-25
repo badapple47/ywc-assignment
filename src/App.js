@@ -4,7 +4,7 @@ import content from './components/content';
 import design from './components/design';
 import marketing from './components/marketing';
 import programming from './components/programming';
-import footer from './components/footer';
+
 import Home2 from './components/home2';
 import Home3 from './components/home3';
 import MyFancyComponent from './components/simplemap';
@@ -44,7 +44,7 @@ class App extends Component {
         <Route path="/marketing" component={marketing} />
         <Route path="/programming" component={programming} />
 
-        <footer/>
+
 
 
       
