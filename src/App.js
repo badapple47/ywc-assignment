@@ -6,7 +6,7 @@ import marketing from './components/marketing';
 import programming from './components/programming';
 
 
-import MyFancyComponent from './components/simplemap';
+// import MyFancyComponent from './components/map&chartDemo';
 import './App.css';
 
 import {
