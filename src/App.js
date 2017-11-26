@@ -5,8 +5,7 @@ import design from './components/design';
 import marketing from './components/marketing';
 import programming from './components/programming';
 
-import Home2 from './components/home2';
-import Home3 from './components/home3';
+
 import MyFancyComponent from './components/simplemap';
 import './App.css';
 

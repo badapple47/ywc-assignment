@@ -190,7 +190,7 @@ class Home extends React.PureComponent {
 
        
         if(this.state.findName.fullName == null){
-            alert("โปรดใส่ชื่อและนามสกุล")
+            alert("โปรดใส่ชื่อ เว้นวรรค และตามด้วยนามสกุล")
             return 0
         }
         
@@ -205,7 +205,7 @@ class Home extends React.PureComponent {
 
         if(this.state.findName.sirName == null && this.state.findName.name != null){
             console.log(this.state.findName.name)
-            alert("โปรดใส่นามสกุล")
+            alert("โปรดเว้นวรรค แล้วตามด้วยนามสกุล")
             return 0
         }
        
